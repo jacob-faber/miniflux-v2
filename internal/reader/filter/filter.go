@@ -144,6 +144,7 @@ func matchesEntryRegexRules(regexPattern string, feed *model.Feed, entry *model.
 	if compiledRegex.MatchString(entry.URL) ||
 		compiledRegex.MatchString(entry.Title) ||
 		compiledRegex.MatchString(entry.Author) ||
+		compiledRegex.MatchString(entry.Content) ||
 		containsMatchingTag {
 		slog.Debug("Entry matches regex rule",
 			slog.String("entry_url", entry.URL),
