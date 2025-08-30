@@ -396,6 +396,12 @@ func TestKeeplistRulesBehavior(t *testing.T) {
 			expected:     false,
 			description:  "When keeplist rule is invalid regex, entry should not be blocked (rule is ignored)",
 		},
+		{
+			name:         "keeplist rule matches tag - entry should pass",
+			keeplistRule: "(?i)TEST ENTRY",
+			expected:     false,
+			description:  "When keeplist rule matches content, entry should not be blocked",
+		},
 	}
 
 	for _, tt := range tests {
